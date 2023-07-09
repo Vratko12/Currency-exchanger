@@ -10,7 +10,7 @@ namespace Currencies_program
             decimal course=1,recieved,given;
             int day=0,change;
             Dictionary<string,decimal> changes=new Dictionary<string, decimal>();
-	        string a;
+	    string a;
             while (true)
             {
                 day++;
@@ -21,7 +21,7 @@ namespace Currencies_program
                     recieved=0;
                     given=0;
                     Console.WriteLine("От лева към чужда валута или обратно? Напишете 1 за избор от лева към чужда валута, 2 за избор от чужда валута към лева или нещо друго, ако е приключил работният ден");
-		            a=Console.ReadLine();
+	            a=Console.ReadLine();
                     if (a == "1")
                     {
 	                    Console.WriteLine("Коя валута се обменя? Опции: EUR,PLN,USD,GDP,TRY,RSD,RUB,RON,BRL,HUF,IDR,MKD,MXN,UAH или нещо друго за друга валута");
@@ -35,19 +35,19 @@ namespace Currencies_program
                         	case("RSD"):course=0.0177m;break;
 	                        case("RUB"):course=0.0205m;break;
 	                        case("RON"):course=0.404m;break;
-				            case("BRL"):course=3.83m;break;
+	                        case("BRL"):course=3.83m;break;
 	                        case("HUF"):course=5.28m;break;
 	                        case("IDR"):course=1.243m;break;
 	                        case("MKD"):course=0.0329m;break;
 	                        case("MXN"):course=0.1093m;break;
 	                        case("UAH"):course=0.047m;break;
-				            default:Console.Write("Course: ");course=decimal.Parse(Console.ReadLine());break;
+				default:Console.Write("Course: ");course=decimal.Parse(Console.ReadLine());break;
                 	    }
-                    	Console.WriteLine("Какво количество се обменя?");
-                    	recieved=decimal.Parse(Console.ReadLine());
-                        given=recieved/course;
-                        Console.WriteLine($"Трябва да се дадат на клиента {Math.Round(given,2)}");
-                    	changes.Add($"{day}.{change}",recieved);                    
+			    Console.WriteLine("Какво количество се обменя?");
+			    recieved=decimal.Parse(Console.ReadLine());
+			    given=recieved/course;
+			    Console.WriteLine($"Трябва да се дадат на клиента {Math.Round(given,2)}");
+                    	    changes.Add($"{day}.{change}",recieved);                    
                     }
                     else if(a=="2")
                     {
@@ -62,21 +62,21 @@ namespace Currencies_program
                         	case("RSD"):course=0.0167m;break;
 	                        case("RUB"):course=0.0165m;break;
 	                        case("RON"):course=0.391m;break;
-				            case("BRL"):course=3.69m;break;
+				case("BRL"):course=3.69m;break;
 	                        case("HUF"):course=5.06m;break;
 	                        case("IDR"):course=1.125m;break;
 	                        case("MKD"):course=0.0319m;break;
 	                        case("MXN"):course=0.0989m;break;
 	                        case("UAH"):course=0.043m;break;
-				            default:Console.Write("Course: ");course=decimal.Parse(Console.ReadLine());break;
+				default:Console.Write("Course: ");course=decimal.Parse(Console.ReadLine());break;
                 	    }
-                    	Console.WriteLine("Какво количество се обменя?");
-                    	recieved=decimal.Parse(Console.ReadLine());
-                        given=recieved*course;
-                        Console.WriteLine($"Трябва да се дадат на клиента {Math.Round(given,2)} лева");
-                    	changes.Add($"{day}.{change}",given);                    
+                    	    Console.WriteLine("Какво количество се обменя?");
+                    	    recieved=decimal.Parse(Console.ReadLine());
+                            given=recieved*course;
+                            Console.WriteLine($"Трябва да се дадат на клиента {Math.Round(given,2)} лева");
+                    	    changes.Add($"{day}.{change}",given);                    
                     }
-		            else break;
+		    else break;
                 }
                 Console.WriteLine("Обмени за деня във формат ден.обмен обменени лева");
                 foreach(KeyValuePair<string,decimal> kvp in changes)Console.WriteLine(kvp.Key+" "+Math.Round(kvp.Value),2);
