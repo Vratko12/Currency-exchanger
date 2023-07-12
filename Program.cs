@@ -24,13 +24,13 @@ namespace Currencies_program
 	            a=Console.ReadLine();
                     if (a == "1")
                     {
-	                    Console.WriteLine("Коя валута се обменя? Опции: EUR,PLN,USD,GDP,TRY,RSD,RUB,RON,BRL,HUF,IDR,MKD,MXN,UAH или нещо друго за друга валута");
+	                    Console.WriteLine("Коя валута се обменя? Опции: EUR,PLN,USD,GBP,TRY,RSD,RUB,RON,BRL,HUF,IDR,MKD,MXN,UAH или нещо друго за друга валута");
         	            switch (Console.ReadLine())
                 	    {
                         	case("EUR"):course=1.965m;break;
                          	case("PLN"):course=0.444m;break;
 	                        case("USD"):course=1.785m;break;
-        	                case("GDP"):course=2.292m;break;
+        	                case("GBP"):course=2.292m;break;
                 	        case("TRY"):course=0.0723m;break;
                         	case("RSD"):course=0.0177m;break;
 	                        case("RUB"):course=0.0205m;break;
@@ -51,13 +51,13 @@ namespace Currencies_program
                     }
                     else if(a=="2")
                     {
-	                    Console.WriteLine("Коя валута се обменя? Опции: EUR,PLN,USD,GDP,TRY,RSD,RUB,RON,BRL,HUF,IDR,MKD,MXN,UAH или нещо друго за друга валута");
+	                    Console.WriteLine("Коя валута се обменя? Опции: EUR,PLN,USD,GBP,TRY,RSD,RUB,RON,BRL,HUF,IDR,MKD,MXN,UAH или нещо друго за друга валута");
         	            switch (Console.ReadLine())
                 	    {
                         	case("EUR"):course=1.95m;break;
                         	case("PLN"):course=0.427m;break;
 	                        case("USD"):course=1.761m;break;
-        	                case("GDP"):course=2.259m;break;
+        	                case("GBP"):course=2.259m;break;
                 	        case("TRY"):course=0.0698m;break;
                         	case("RSD"):course=0.0167m;break;
 	                        case("RUB"):course=0.0165m;break;
