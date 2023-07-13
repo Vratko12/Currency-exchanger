@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 namespace Currencies_program
 {
@@ -13,18 +13,19 @@ namespace Currencies_program
 	    string a;
             while (true)
             {
-                day++;
+		day++;
                 change=0;
                 while (true)
                 {
-                    change++;
+                    Console.Clear();
+		    change++;
                     recieved=0;
                     given=0;
                     Console.WriteLine("От лева към чужда валута или обратно? Напишете 1 за избор от лева към чужда валута, 2 за избор от чужда валута към лева или нещо друго, ако е приключил работният ден");
 	            a=Console.ReadLine();
                     if (a == "1")
                     {
-	                    Console.WriteLine("Коя валута се обменя? Опции: EUR,PLN,USD,GBP,TRY,RSD,RUB,RON,BRL,HUF,IDR,MKD,MXN,UAH или нещо друго за друга валута");
+	                    Console.WriteLine("\nКоя валута се обменя? Опции: EUR,PLN,USD,GBP,TRY,RSD,RUB,RON,BRL,HUF,IDR,MKD,MXN,UAH или нещо друго за друга валута");
         	            switch (Console.ReadLine())
                 	    {
                         	case("EUR"):course=1.965m;break;
@@ -41,17 +42,17 @@ namespace Currencies_program
 	                        case("MKD"):course=0.0329m;break;
 	                        case("MXN"):course=0.1093m;break;
 	                        case("UAH"):course=0.047m;break;
-				default:Console.Write("Course: ");course=decimal.Parse(Console.ReadLine());break;
+				default:Console.Write("\nКурс: ");course=decimal.Parse(Console.ReadLine());break;
                 	    }
-			    Console.WriteLine("Какво количество се обменя?");
+			    Console.WriteLine("\nКакво количество се обменя?");
 			    recieved=decimal.Parse(Console.ReadLine());
 			    given=recieved/course;
-			    Console.WriteLine($"Трябва да се дадат на клиента {Math.Round(given,2)}");
+			    Console.WriteLine($"\nТрябва да се дадат на клиента {Math.Round(given,2)}");
                     	    changes.Add($"{day}.{change}",recieved);                    
                     }
                     else if(a=="2")
                     {
-	                    Console.WriteLine("Коя валута се обменя? Опции: EUR,PLN,USD,GBP,TRY,RSD,RUB,RON,BRL,HUF,IDR,MKD,MXN,UAH или нещо друго за друга валута");
+	                    Console.WriteLine("\nКоя валута се обменя? Опции: EUR,PLN,USD,GBP,TRY,RSD,RUB,RON,BRL,HUF,IDR,MKD,MXN,UAH или нещо друго за друга валута");
         	            switch (Console.ReadLine())
                 	    {
                         	case("EUR"):course=1.95m;break;
@@ -68,18 +69,20 @@ namespace Currencies_program
 	                        case("MKD"):course=0.0319m;break;
 	                        case("MXN"):course=0.0989m;break;
 	                        case("UAH"):course=0.043m;break;
-				default:Console.Write("Course: ");course=decimal.Parse(Console.ReadLine());break;
+				default:Console.Write("\nКурс: ");course=decimal.Parse(Console.ReadLine());break;
                 	    }
-                    	    Console.WriteLine("Какво количество се обменя?");
+                    	    Console.WriteLine("\nКакво количество се обменя?");
                     	    recieved=decimal.Parse(Console.ReadLine());
                             given=recieved*course;
-                            Console.WriteLine($"Трябва да се дадат на клиента {Math.Round(given,2)} лева");
+                            Console.WriteLine($"\nТрябва да се дадат на клиента {Math.Round(given,2)} лева");
                     	    changes.Add($"{day}.{change}",given);                    
                     }
 		    else break;
+		    Console.ReadKey();
                 }
-                Console.WriteLine("Обмени за деня във формат ден.обмен обменени лева");
+                Console.WriteLine("\nОбмени за деня във формат ден.обмен обменени лева");
                 foreach(KeyValuePair<string,decimal> kvp in changes)Console.WriteLine(kvp.Key+" "+Math.Round(kvp.Value),2);
+		Console.ReadKey();
             }
         }
     }
